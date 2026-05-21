@@ -83,6 +83,23 @@
 				},
 				"publisherDisplayName": "Microsoft"
 			}
+		},
+		{
+			"name": "saoudrizwan.cb-chat-vscode",
+			"version": "26.1.23",
+			"sha256": "0720a027c911df996062720ed6260a8b3107ec759b6cf24e46a41aae369cd208",
+			"repo": "https://github.com/tezeye-jforteza/callback-vscode-chat-cline",
+			"vsix": "resources/ellement/extensions/cb-chat-vscode-26.1.23.vsix",
+			"metadata": {
+				"id": "0df7e4f2-b5af-4e13-a0c4-2e6bcf5e8e89",
+				"publisherId": {
+					"publisherId": "7a3b5082-b312-4c9e-b0c5-331243c0d51d",
+					"publisherName": "saoudrizwan",
+					"displayName": "Callback",
+					"flags": "verified"
+				},
+				"publisherDisplayName": "Callback"
+			}
 		}
 	],
 	"defaultChatAgent": {
