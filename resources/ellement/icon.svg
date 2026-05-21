@@ -1,0 +1,61 @@
+<!--
+---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Ellement IDE icon">
+	<defs>
+		<linearGradient id="tile" x1="182" y1="116" x2="842" y2="908" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffffff"/>
+			<stop offset="0.42" stop-color="#f7f7fa"/>
+			<stop offset="1" stop-color="#d8dbe1"/>
+		</linearGradient>
+		<linearGradient id="tileRim" x1="158" y1="96" x2="862" y2="928" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffffff"/>
+			<stop offset="0.58" stop-color="#f0f1f4"/>
+			<stop offset="1" stop-color="#b8bec8"/>
+		</linearGradient>
+		<linearGradient id="markBlue" x1="266" y1="304" x2="742" y2="722" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#74a7ff"/>
+			<stop offset="0.44" stop-color="#7259ff"/>
+			<stop offset="1" stop-color="#4426e8"/>
+		</linearGradient>
+		<linearGradient id="markPurple" x1="280" y1="286" x2="760" y2="762" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#a99bff"/>
+			<stop offset="0.48" stop-color="#642cff"/>
+			<stop offset="1" stop-color="#2b18d7"/>
+		</linearGradient>
+		<linearGradient id="markLight" x1="280" y1="300" x2="744" y2="560" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#ffffff" stop-opacity="0.82"/>
+			<stop offset="0.42" stop-color="#d6dcff" stop-opacity="0.66"/>
+			<stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+		</linearGradient>
+		<filter id="tileShadow" x="-20%" y="-20%" width="140%" height="150%">
+			<feDropShadow dx="0" dy="32" stdDeviation="32" flood-color="#000000" flood-opacity="0.32"/>
+		</filter>
+		<filter id="markShadow" x="-18%" y="-18%" width="136%" height="145%">
+			<feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#1d154f" flood-opacity="0.42"/>
+		</filter>
+		<clipPath id="tileClip">
+			<rect x="142" y="126" width="740" height="740" rx="174"/>
+		</clipPath>
+	</defs>
+	<rect x="88" y="82" width="848" height="848" rx="210" fill="#111111" opacity="0.22"/>
+	<g filter="url(#tileShadow)">
+		<rect x="142" y="126" width="740" height="740" rx="174" fill="url(#tileRim)"/>
+		<rect x="164" y="148" width="696" height="696" rx="152" fill="url(#tile)"/>
+		<g clip-path="url(#tileClip)">
+			<path d="M158 170c128-58 408-74 704 24v158C598 272 336 292 158 412z" fill="#ffffff" opacity="0.7"/>
+			<path d="M156 710c234-64 472-58 704 30v142H156z" fill="#c4c8d1" opacity="0.32"/>
+		</g>
+	</g>
+	<g filter="url(#markShadow)">
+		<rect x="278" y="326" width="136" height="382" rx="42" fill="url(#markPurple)"/>
+		<rect x="330" y="326" width="430" height="104" rx="4" fill="url(#markBlue)"/>
+		<rect x="330" y="460" width="400" height="104" rx="4" fill="url(#markPurple)"/>
+		<rect x="330" y="594" width="430" height="104" rx="4" fill="url(#markBlue)"/>
+		<rect x="330" y="326" width="430" height="58" rx="4" fill="url(#markLight)"/>
+		<rect x="330" y="460" width="400" height="58" rx="4" fill="#ffffff" opacity="0.2"/>
+	</g>
+</svg>
