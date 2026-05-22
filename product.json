@@ -31,6 +31,8 @@
 	"linuxIconName": "ellement",
 	"licenseFileName": "LICENSE.txt",
 	"reportIssueUrl": "https://github.com/tezeye-jforteza/ellement_ide/issues/new",
+	"enableTelemetry": false,
+	"showTelemetryOptOut": false,
 	"nodejsRepository": "https://nodejs.org",
 	"urlProtocol": "ellement",
 	"agentsTelemetryAppName": "agents",

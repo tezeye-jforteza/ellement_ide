@@ -100,7 +100,7 @@ export class AgentHostStateManager extends Disposable {
 				schema: platformRootSchema.toProtocol(),
 				values: platformRootSchema.validateOrDefault({}, {
 					[SessionConfigKey.Permissions]: { allow: [], deny: [] } satisfies IPermissionsValue,
-					[AgentHostTelemetryLevelConfigKey]: telemetryLevelToAgentHostConfigValue(TelemetryLevel.USAGE),
+					[AgentHostTelemetryLevelConfigKey]: telemetryLevelToAgentHostConfigValue(TelemetryLevel.NONE),
 				}),
 			},
 		};

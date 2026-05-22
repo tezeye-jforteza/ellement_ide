@@ -94,11 +94,15 @@ export interface URIDescriptor {
  * @returns false - telemetry is completely disabled, true - telemetry is logged locally, but may not be sent
  */
 export function supportsTelemetry(productService: IProductService, environmentService: IEnvironmentService): boolean {
+	if (environmentService.disableTelemetry || productService.enableTelemetry === false) {
+		return false;
+	}
+
 	// If it's OSS and telemetry isn't disabled via the CLI we will allow it for logging only purposes
-	if (!environmentService.isBuilt && !environmentService.disableTelemetry) {
+	if (!environmentService.isBuilt) {
 		return true;
 	}
-	return !(environmentService.disableTelemetry || !productService.enableTelemetry);
+	return !!productService.enableTelemetry;
 }
 
 /**
@@ -146,7 +150,7 @@ export function getTelemetryLevel(configurationService: IConfigurationService): 
 	}
 
 	// Maps new telemetry setting to a telemetry level
-	switch (newConfig ?? TelemetryConfiguration.ON) {
+	switch (newConfig ?? TelemetryConfiguration.OFF) {
 		case TelemetryConfiguration.ON:
 			return TelemetryLevel.USAGE;
 		case TelemetryConfiguration.ERROR:

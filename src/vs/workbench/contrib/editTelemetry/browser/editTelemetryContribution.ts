@@ -30,7 +30,7 @@ export class EditTelemetryContribution extends Disposable {
 		const workspace = derived(reader => reader.store.add(instantiationService.createInstance(VSCodeWorkspace)));
 		const annotatedDocuments = derived(reader => reader.store.add(instantiationService.createInstance(AnnotatedDocuments, workspace.read(reader))));
 
-		const editSourceTrackingEnabled = observableConfigValue(EDIT_TELEMETRY_SETTING_ID, true, configurationService);
+		const editSourceTrackingEnabled = observableConfigValue(EDIT_TELEMETRY_SETTING_ID, false, configurationService);
 		this._register(autorun(r => {
 			const enabled = editSourceTrackingEnabled.read(r);
 			if (!enabled || !telemetryLevelEnabled(telemetryService, TelemetryLevel.USAGE)) {
@@ -39,7 +39,7 @@ export class EditTelemetryContribution extends Disposable {
 			r.store.add(instantiationService.createInstance(EditTrackingFeature, workspace.read(r), annotatedDocuments.read(r)));
 		}));
 
-		const aiStatsEnabled = observableConfigValue(AI_STATS_SETTING_ID, true, configurationService);
+		const aiStatsEnabled = observableConfigValue(AI_STATS_SETTING_ID, false, configurationService);
 		this._register(autorun(r => {
 			const enabled = aiStatsEnabled.read(r);
 			const aiDisabled = chatEntitlementService.sentimentObs.read(r).hidden;

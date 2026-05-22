@@ -13,7 +13,7 @@ import { TestConfigurationService } from '../../../configuration/test/common/tes
 import product from '../../../product/common/product.js';
 import { IProductService } from '../../../product/common/productService.js';
 import ErrorTelemetry from '../../browser/errorTelemetry.js';
-import { TelemetryConfiguration, TelemetryLevel } from '../../common/telemetry.js';
+import { TelemetryConfiguration, TelemetryLevel, TELEMETRY_SETTING_ID } from '../../common/telemetry.js';
 import { ITelemetryServiceConfig, TelemetryService } from '../../common/telemetryService.js';
 import { ITelemetryAppender, NullAppender } from '../../common/telemetryUtils.js';
 
@@ -788,9 +788,18 @@ suite('TelemetryService', () => {
 
 	test('Telemetry Service sends events when telemetry is on', sinonTestFn(function () {
 		const testAppender = new TestTelemetryAppender();
-		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
+		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService({ [TELEMETRY_SETTING_ID]: TelemetryConfiguration.ON }), TestProductService);
 		service.publicLog('testEvent');
 		assert.strictEqual(testAppender.getEventsCount(), 1);
+		service.dispose();
+	}));
+
+	test('Telemetry Service defaults telemetry level to off', sinonTestFn(function () {
+		const testAppender = new TestTelemetryAppender();
+		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
+		service.publicLog('testEvent');
+		assert.strictEqual(service.telemetryLevel, TelemetryLevel.NONE);
+		assert.strictEqual(testAppender.getEventsCount(), 0);
 		service.dispose();
 	}));
 
