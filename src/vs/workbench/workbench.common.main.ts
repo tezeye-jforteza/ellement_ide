@@ -231,6 +231,9 @@ import './contrib/chat/browser/chatSessions/chatSessions.contribution.js';
 import './contrib/chat/browser/contextContrib/chatContext.contribution.js';
 import './contrib/imageCarousel/browser/imageCarousel.contribution.js';
 
+// Ellement
+import './contrib/ellement/browser/ellementLayout.contribution.js';
+
 // Interactive
 import './contrib/interactive/browser/interactive.contribution.js';
 

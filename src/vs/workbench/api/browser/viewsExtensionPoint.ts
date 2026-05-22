@@ -630,7 +630,7 @@ class ViewsExtensionHandler implements IWorkbenchContribution {
 			case 'debug': return this.viewContainersRegistry.get(DEBUG);
 			case 'scm': return this.viewContainersRegistry.get(SCM);
 			case 'remote': return this.viewContainersRegistry.get(REMOTE);
-			default: return this.viewContainersRegistry.get(value) ?? this.viewContainersRegistry.get(`workbench.view.extension.${value}`);
+			default: return this.viewContainersRegistry.get(`workbench.view.extension.${value}`);
 		}
 	}
 

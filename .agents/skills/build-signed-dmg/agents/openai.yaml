@@ -1,0 +1,4 @@
+display_name: Build Signed DMG
+short_description: Build, sign, notarize, staple, and validate an Ellement IDE macOS DMG.
+default_prompt: Build a fresh signed and notarized macOS arm64 DMG for Ellement IDE.
+
